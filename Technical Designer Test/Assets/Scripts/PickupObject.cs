@@ -29,7 +29,6 @@ public class PickupObject : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            print("triggering on correct layers");
             PlayerItemManager itemManager = other.GetComponent<PlayerItemManager>();
             if (itemManager.handsFull == false)
             {
@@ -57,5 +56,10 @@ public class PickupObject : MonoBehaviour
     {
         float amount = material.GetFloat("_Amount");
         material.SetFloat("_Amount", amount += 0.05f);
+    }
+
+    public void NormalDestroy()
+    {
+        Destroy(gameObject, 0.2f);
     }
 }

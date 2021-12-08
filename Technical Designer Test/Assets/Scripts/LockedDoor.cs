@@ -16,13 +16,12 @@ public class LockedDoor : BasicDoor
                 PlayerItemManager itemManager = other.GetComponent<PlayerItemManager>();
                 if (itemManager.heldKeyType == keyNeededToOpen)
                 {
-                    itemManager.itemHeld.DisintegrateObject();
+                    itemManager.itemHeld.NormalDestroy();
                     itemManager.handsFull = false;
                     itemManager.heldKeyType = null;
                     itemManager.itemHeld = null;
                     Trigger();
                     locked = false;
-                    print("key consumed");
                     itemManager.raisedHands.SetActive(false);
                     itemManager.idleHands.SetActive(true);
                 }

@@ -39,7 +39,6 @@ public class PlayerItemManager : MonoBehaviour
 
     public void PickUp(Collider other)
     {
-        print("pickup being called");
         itemHeld = other.GetComponent<PickupObject>();
         itemHeld.transform.SetParent(ItemHolderObj.transform);
         itemHeld.transform.position = ItemHolderObj.transform.position;
