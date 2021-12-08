@@ -11,8 +11,15 @@ public class PickupObject : MonoBehaviour
 
     public KeyType keyType;
 
+    MeshRenderer meshRenderer;
+    Material material;
+
     private void Awake()
     {
+        meshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
+        Material tempMat = meshRenderer.material;
+        material = new Material(tempMat);
+        meshRenderer.material = material;
         rb = gameObject.GetComponent<Rigidbody>();
         col = gameObject.GetComponent<Collider>();
         itemRespawnPos = gameObject.transform.position;
@@ -39,6 +46,16 @@ public class PickupObject : MonoBehaviour
 
     public void DisintegrateObject()
     {
+        if (material.GetFloat("_Amount") < 1)
+        {
+            InvokeRepeating("IncreaseDissolve", 0f, 0.05f);
+        }
         Destroy(gameObject, 1f);
+    }
+
+    void IncreaseDissolve()
+    {
+        float amount = material.GetFloat("_Amount");
+        material.SetFloat("_Amount", amount += 0.05f);
     }
 }
