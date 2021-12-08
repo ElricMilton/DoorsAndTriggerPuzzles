@@ -62,4 +62,9 @@ public class PickupObject : MonoBehaviour
     {
         Destroy(gameObject, 0.2f);
     }
+
+    public void ResetItem()
+    {
+        transform.position = itemRespawnPos;
+    }
 }
