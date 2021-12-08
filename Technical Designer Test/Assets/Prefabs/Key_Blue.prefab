@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c108b37e043c234dbd146190aa9f089, type: 2}
+    - target: {fileID: 3729898439784148774, guid: fcfdcc89716f672429dd0117b823df52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5dd3433a53e50b4d84204e9c04142ea, type: 2}
     - target: {fileID: 3862241879060920571, guid: fcfdcc89716f672429dd0117b823df52, type: 3}
       propertyPath: m_Name
       value: Key_Blue

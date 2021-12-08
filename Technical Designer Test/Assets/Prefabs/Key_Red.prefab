@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fe80bc08e2760cd4c868c657fe537e52, type: 2}
+    - target: {fileID: 3729898439784148774, guid: fcfdcc89716f672429dd0117b823df52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e25fcb54592020345aeb2a972de4e1d0, type: 2}
     - target: {fileID: 3862241879060920571, guid: fcfdcc89716f672429dd0117b823df52, type: 3}
       propertyPath: m_Name
       value: Key_Red
