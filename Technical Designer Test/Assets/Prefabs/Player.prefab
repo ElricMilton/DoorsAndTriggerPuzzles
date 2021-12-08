@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 5304464067912178163}
+  model: {fileID: 5304464067471750900}
   movement: {fileID: 5304464067912178160}
 --- !u!114 &5304464067912178160
 MonoBehaviour:
