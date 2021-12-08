@@ -1,3 +1,5 @@
+// I found this shader script in a blog, and made some minor adjustments to suit the needs of the project. ORIGINAL SOURCE: https://gist.github.com/benloong/b25066cb140398b402f2ad8295a28d42
+
 Shader "Custom/DissolveSurface" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
