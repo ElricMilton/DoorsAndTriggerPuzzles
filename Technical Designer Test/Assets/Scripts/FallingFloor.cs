@@ -23,9 +23,8 @@ public class FallingFloor : MonoBehaviour
     IEnumerator Fall()
     {
         anim.Play("FallingPlatform");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         col.enabled = false;
-        yield return new WaitForSeconds(1.5f);
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 2f);
     }
 }

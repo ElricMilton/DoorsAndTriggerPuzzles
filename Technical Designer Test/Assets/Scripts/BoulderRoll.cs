@@ -8,9 +8,12 @@ public class BoulderRoll : MonoBehaviour
     public float force;
     bool triggered = false;
 
+    Material material;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        material = GetComponent<MeshRenderer>().material;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,5 +30,19 @@ public class BoulderRoll : MonoBehaviour
         {
             rb.AddForce(Vector3.forward * force);
         }
+    }
+
+    public void DisintegrateObject()
+    {
+        if (material.GetFloat("_Amount") < 1)
+        {
+            InvokeRepeating("IncreaseDissolve", 0f, 0.05f);
+        }
+        Destroy(gameObject, 1f);
+    }
+    void IncreaseDissolve()
+    {
+        float amount = material.GetFloat("_Amount");
+        material.SetFloat("_Amount", amount += 0.05f);
     }
 }

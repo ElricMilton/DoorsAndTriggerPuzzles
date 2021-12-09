@@ -18,5 +18,9 @@ public class DisintegrationField : MonoBehaviour
                 itemManager.DisintegrateHeldObject();
             }
         }
+        if (other.gameObject.layer == 8)
+        {
+            other.gameObject.GetComponent<BoulderRoll>().DisintegrateObject();
+        }
     }
 }

@@ -7,7 +7,8 @@ public class GenericTriggerPlate : MonoBehaviour
 {
     [SerializeField] GameObject plate;
 
-    public UnityEvent triggeredEvent;
+    public UnityEvent onTriggeredEvent;
+    public UnityEvent offTriggeredEvent;
 
     public float pressedPosition;
     Vector3 unpressedPos;
@@ -52,7 +53,7 @@ public class GenericTriggerPlate : MonoBehaviour
     {
         plate.transform.localPosition = new Vector3(0, pressedPosition, 0);
         isPressed = true;
-        triggeredEvent.Invoke();
+        onTriggeredEvent.Invoke();
         mRenderer.material = pressedMat;
     }
 
@@ -60,6 +61,7 @@ public class GenericTriggerPlate : MonoBehaviour
     {
         plate.transform.localPosition = unpressedPos;
         isPressed = false;
+        offTriggeredEvent.Invoke();
         mRenderer.material = defaultMat;
     }
 }

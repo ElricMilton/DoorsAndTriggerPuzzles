@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     CharacterController playerController;
+    public float movementSpeed;
     
     void Update()
     {
@@ -15,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
             input.Normalize();
         }
 
-        Vector3 movement = new Vector3(input.x * 8f, -9.8f, input.y * 8f) * Time.deltaTime;
+        Vector3 movement = new Vector3(input.x * movementSpeed, -9.8f, input.y * movementSpeed) * Time.deltaTime;
         this.playerController.Move(movement);
 
         Vector3 rotation = new Vector3(movement.x, 0, movement.z);
