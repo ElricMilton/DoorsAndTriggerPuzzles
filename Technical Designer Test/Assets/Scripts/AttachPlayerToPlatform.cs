@@ -6,14 +6,14 @@ public class AttachPlayerToPlatform : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.layer == 6 || other.gameObject.layer == 7)
         {
             other.transform.parent = gameObject.transform;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.layer == 6 || other.gameObject.layer == 7)
         {
             other.transform.parent = null;
         }

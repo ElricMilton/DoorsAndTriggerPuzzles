@@ -14,25 +14,12 @@ public class PlayerItemManager : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
             //Drop held object
             if(itemHeld != null)
             {
-                itemHeld.gameObject.transform.SetParent(null);
-                itemHeld.rb.isKinematic = false;
-                itemHeld.col.enabled = true;
-                itemHeld.rb.freezeRotation = false;
-
-                heldKeyType = null;
-                itemHeld = null;
-
-                raisedHands.SetActive(false);
-                idleHands.SetActive(true);
-
-                //Make sure the player doesn't immediately pick the object back up
-                StartCoroutine(PickupCooldown());
+                DropItem();
             }
         }
     }
@@ -49,6 +36,23 @@ public class PlayerItemManager : MonoBehaviour
 
         raisedHands.SetActive(true);
         idleHands.SetActive(false);
+    }
+
+    public void DropItem()
+    {
+        itemHeld.gameObject.transform.SetParent(null);
+        itemHeld.rb.isKinematic = false;
+        itemHeld.col.enabled = true;
+        itemHeld.rb.freezeRotation = false;
+
+        heldKeyType = null;
+        itemHeld = null;
+
+        raisedHands.SetActive(false);
+        idleHands.SetActive(true);
+
+        //Make sure the player doesn't immediately pick the object back up
+        StartCoroutine(PickupCooldown());
     }
 
     IEnumerator PickupCooldown()

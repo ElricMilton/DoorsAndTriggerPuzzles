@@ -14,6 +14,8 @@ public class PickupObject : MonoBehaviour
     MeshRenderer meshRenderer;
     Material material;
 
+    PlayerItemManager itemManager = null;
+
     private void Awake()
     {
         meshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
@@ -29,7 +31,7 @@ public class PickupObject : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            PlayerItemManager itemManager = other.GetComponent<PlayerItemManager>();
+            itemManager = other.GetComponent<PlayerItemManager>();
             if (itemManager.handsFull == false)
             {
                 //Pickup object
@@ -65,6 +67,10 @@ public class PickupObject : MonoBehaviour
 
     public void ResetItem()
     {
+        gameObject.transform.SetParent(null);
+        rb.isKinematic = false;
+        col.enabled = true;
+        rb.freezeRotation = false;
         transform.position = itemRespawnPos;
     }
 }

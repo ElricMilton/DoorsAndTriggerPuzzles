@@ -25,6 +25,10 @@ public class FlameTrap : MonoBehaviour
             {
                 other.gameObject.GetComponent<Player>().KillPlayer();
             }
+            if (other.gameObject.layer == 7)
+            {
+                other.gameObject.GetComponent<PickupObject>().DisintegrateObject();
+            }
         }
     }
 
