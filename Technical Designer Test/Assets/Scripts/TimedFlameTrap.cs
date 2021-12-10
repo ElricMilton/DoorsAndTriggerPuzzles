@@ -7,6 +7,8 @@ public class TimedFlameTrap : MonoBehaviour
     Collider col;
     public GameObject flameFX;
     bool isActive = false;
+
+    public float startDelay;
     public float cooldown;
 
     private void Awake()
@@ -16,7 +18,7 @@ public class TimedFlameTrap : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("TurnOnFlames", cooldown, cooldown*2);
+        InvokeRepeating("TurnOnFlames", startDelay, cooldown*2);
     }
 
     private void OnTriggerEnter(Collider other)

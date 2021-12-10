@@ -11,9 +11,9 @@ public class RestartLevelTrigger : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        if (other.gameObject.layer == 7)
-        {
-            other.gameObject.GetComponent<PickupObject>().ResetItem();
-        }
+        //if (other.gameObject.layer == 7)
+        //{
+        //    other.gameObject.GetComponent<PickupObject>().ResetItem();
+        //}
     }
 }

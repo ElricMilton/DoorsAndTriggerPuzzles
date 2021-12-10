@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5806474188507063106, guid: e3151fd51010ce34fbf38071ed543b73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cfdcf9e207aca09448c37e1601c76dcc, type: 2}
     - target: {fileID: 5806474189784559478, guid: e3151fd51010ce34fbf38071ed543b73, type: 3}
       propertyPath: m_Name
-      value: FallingFloor
+      value: FallingFloor2
       objectReference: {fileID: 0}
     - target: {fileID: 5806474189784559479, guid: e3151fd51010ce34fbf38071ed543b73, type: 3}
       propertyPath: m_RootOrder

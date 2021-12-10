@@ -16,7 +16,7 @@ public class PickupObject : MonoBehaviour
 
     PlayerItemManager itemManager = null;
 
-    private void Awake()
+    private void Start()
     {
         meshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
         Material tempMat = meshRenderer.material;
@@ -72,5 +72,9 @@ public class PickupObject : MonoBehaviour
         col.enabled = true;
         rb.freezeRotation = false;
         transform.position = itemRespawnPos;
+        itemManager.heldKeyType = null;
+        itemManager.itemHeld = null;
+        itemManager.raisedHands.SetActive(false);
+        itemManager.idleHands.SetActive(true);
     }
 }
